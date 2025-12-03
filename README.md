@@ -106,14 +106,17 @@ project/
 │   ├── settings.py
 │   ├── urls.py
 │   └── ...
+│
 │── Event_management/
 │   ├── models.py
 │   ├── views.py
 │   ├── serializers.py
 │   ├── permissions.py
+│
 │── db.sqlite3
 │── manage.py
 │── README.md
+
 
 🎯 Conclusion
 
