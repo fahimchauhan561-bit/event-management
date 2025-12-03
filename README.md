@@ -74,6 +74,12 @@ GET	/api/events/<event_id>/reviews/	List reviews
 🔒 Permissions
 ✔ IsOrganizerOrReadOnly
 
+Anyone can view events
+
+Only the organizer can update or delete
+
+Enforces object-level permissions
+
 Anyone can view
 
 Only organizer can edit/delete
