@@ -8,6 +8,7 @@ This project is a Django REST Framework (DRF) based API for managing events, RSV
 It includes authentication, permissions, and clean REST API design as required in the assignment.
 
 🚀 Features
+
 ✔ User Profile
 
 Extends Django User model
