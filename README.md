@@ -3,6 +3,7 @@
 username and password for admin 
 username :- fahim   
 password  :- 123@abc
+
 This project is a Django REST Framework (DRF) based API for managing events, RSVPs, and reviews.
 It includes authentication, permissions, and clean REST API design as required in the assignment.
 
