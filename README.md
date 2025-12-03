@@ -1,129 +1,128 @@
-📌 Event Management API — Assignment
+# 📌 Event Management API — Assignment
 
-username and password for admin 
-username :- fahim   
-password  :- 123@abc
-This project is a Django REST Framework (DRF) based API for managing events, RSVPs, and reviews.
-It includes authentication, permissions, and clean REST API design as required in the assignment.
+## Admin Credentials
+- **Username:** fahim
+- **Password:** 123@abc
 
-🚀 Features
-✔ User Profile
+This project is a Django REST Framework (DRF) based API for managing events, RSVPs, and reviews. It includes authentication, permissions, and clean REST API design as required in the assignment.
 
-Extends Django User model
+---
 
-Fields: full_name, bio, location, profile_picture
+## 🚀 Features
 
-✔ Events
+### ✔ User Profile
+- Extends Django User model
+- Fields: full_name, bio, location, profile_picture
 
-Create, list, update, delete events
+### ✔ Events
+- Create, list, update, delete events
+- Only organizer can modify their events
+- Private events restricted
+- Timestamps auto-tracked
 
-Only organizer can modify their events
-
-Private events restricted
-
-Timestamps auto-tracked
-
-✔ RSVP
-
+### ✔ RSVP
 Users can respond with:
+- Going
+- Maybe
+- Not Going
 
-Going
-
-Maybe
-
-Not Going
-
-✔ Event Reviews
-
+### ✔ Event Reviews
 Users can leave:
+- Rating (integer)
+- Comment
 
-Rating (integer)
+---
 
-Comment
-
-🔐 Authentication (JWT)
-
+## 🔐 Authentication (JWT)
 This project uses JSON Web Tokens (JWT).
 
-Endpoint	Type	Description
-/api/token/	POST	Get access + refresh tokens
-/api/token/refresh/	POST	Refresh access token
-
-Usage in headers:
-
+**Usage in headers:**
+```
 Authorization: Bearer <access_token>
+```
 
-📡 API Endpoints
-🎉 Event API
-Method	Endpoint	Description
-POST	/api/events/	Create event (auth required)
-GET	/api/events/	List all public events (pagination)
-GET	/api/events/<id>/	Get event details
-PUT	/api/events/<id>/	Update event (only organizer)
-DELETE	/api/events/<id>/	Delete event (only organizer)
-✋ RSVP API
-Method	Endpoint	Description
-POST	/api/events/<event_id>/rsvp/	RSVP to event
-PATCH	/api/events/<event_id>/rsvp/<user_id>/	Update RSVP
-⭐ Review API
-Method	Endpoint	Description
-POST	/api/events/<event_id>/reviews/	Add review
-GET	/api/events/<event_id>/reviews/	List reviews
-🔒 Permissions
-✔ IsOrganizerOrReadOnly
+---
 
-Anyone can view
+## 📡 API Endpoints
 
-Only organizer can edit/delete
+### 🎉 Event API
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/events/` | Create event (auth required) |
+| GET | `/api/events/` | List all public events (pagination) |
+| GET | `/api/events/<id>/` | Get event details |
+| PUT | `/api/events/<id>/` | Update event (only organizer) |
+| DELETE | `/api/events/<id>/` | Delete event (only organizer) |
 
-✔ Private Event Restriction
+### ✋ RSVP API
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/events/<event_id>/rsvp/` | RSVP to event |
+| PATCH | `/api/events/<event_id>/rsvp/<user_id>/` | Update RSVP |
 
+### ⭐ Review API
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/events/<event_id>/reviews/` | Add review |
+| GET | `/api/events/<event_id>/reviews/` | List reviews |
+
+### 🔐 JWT Endpoints
+| Endpoint | Type | Description |
+|----------|------|-------------|
+| `/api/token/` | POST | Get access + refresh tokens |
+| `/api/token/refresh/` | POST | Refresh access token |
+
+---
+
+## 🔒 Permissions
+
+### ✔ IsOrganizerOrReadOnly
+- Anyone can view events
+- Only the organizer can update or delete
+- Enforces object-level permissions
+
+### ✔ Private Event Restriction
 Private events require:
+- Organizer
+- Staff
+- (Future: invited users)
 
-Organizer
+---
 
-Staff
+## ▶️ Setup Instructions
 
-(Future: invited users)
-
-▶️ Setup Instructions
-1️⃣ Install dependencies
+### 1️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-2️⃣ Apply migrations
+### 2️⃣ Apply migrations
+```bash
 python manage.py migrate
+```
 
-3️⃣ Run server
+### 3️⃣ Run server
+```bash
 python manage.py runserver
+```
 
-4️⃣ Create superuser
+### 4️⃣ Create superuser
+```bash
 python manage.py createsuperuser
+```
 
-📁 Project Structure
-project/
-│── website/
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
-│── Event_management/
-│   ├── models.py
-│   ├── views.py
-│   ├── serializers.py
-│   ├── permissions.py
-│── db.sqlite3
-│── manage.py
-│── README.md
+---
 
-🎯 Conclusion
-
+## 🎯 Conclusion
 This project fulfills all assignment requirements:
-✔ Models
-✔ Serializers
-✔ API Views
-✔ Permissions
-✔ JWT Authentication
-✔ Pagination
-✔ Clean REST structure
+- ✔ Models
+- ✔ Serializers
+- ✔ API Views
+- ✔ Permissions
+- ✔ JWT Authentication
+- ✔ Pagination
+- ✔ Clean REST structure
 
-Fahim Chauhan
+---
 
+**Fahim Chauhan**
