@@ -100,24 +100,6 @@ python manage.py runserver
 4️⃣ Create superuser
 python manage.py createsuperuser
 
-📁 Project Structure
-project/
-│── website/
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
-│
-│── Event_management/
-│   ├── models.py
-│   ├── views.py
-│   ├── serializers.py
-│   ├── permissions.py
-│
-│── db.sqlite3
-│── manage.py
-│── README.md
-
-
 🎯 Conclusion
 
 This project fulfills all assignment requirements:
