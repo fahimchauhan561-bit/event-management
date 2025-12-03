@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management API</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #f8f8f8; }
+        h1 { color: #333; }
+        pre {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Event Management API</h1>
+    <p>All APIs are working successfully.</p>
+
+    <pre>
+Event API
+---------
+POST   /api/events/                  → Create a new event (authenticated users only)
+GET    /api/events/                  → List all public events (with pagination)
+GET    /api/events/{id}/             → Get details of a specific event
+PUT    /api/events/{id}/             → Update an event (only the organizer can edit)
+DELETE /api/events/{id}/             → Delete an event (only the organizer)
+
+RSVP API
+--------
+POST   /api/events/{event_id}/rsvp/               → RSVP to an event
+PATCH  /api/events/{event_id}/rsvp/{user_id}/     → Update RSVP status
+
+Review API
+----------
+POST   /api/events/{event_id}/reviews/            → Add a review for an event
+GET    /api/events/{event_id}/reviews/            → List all reviews for an event
+    </pre>
+
+</body>
+</html>
